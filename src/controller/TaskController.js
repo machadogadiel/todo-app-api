@@ -8,8 +8,10 @@ export const task = (app, db) => {
 
     app.post("/task", (req, res) => { 
         const body = req.body
-        const newUser = new TaskModel(body.title, body.description, body.status, body.date)
-        db.tasks.push(newUser)
+        const newTask = new TaskModel(body.title, body.description, body.status, body.date)
+
+        db.tasks.push(newTask)
+
         res.send(req.body) 
     })
 }
